@@ -1,239 +1,118 @@
-// QUIZ
+const slider = document.getElementById("yearSlider");
+const yearValue = document.getElementById("yearValue");
 
-const questions = [
-  {
-    question: "Qual material demora mais para se decompor?",
-    answers: ["Papel", "Vidro", "Casca de banana"],
-    correct: 1
-  },
-  {
-    question: "O que ajuda a diminuir o aquecimento global?",
-    answers: ["Plantar árvores", "Queimar lixo", "Desmatamento"],
-    correct: 0
-  },
-  {
-    question: "Qual energia é renovável?",
-    answers: ["Petróleo", "Solar", "Carvão"],
-    correct: 1
-  }
-];
+const co2 = document.getElementById("co2");
+const temp = document.getElementById("temp");
+const bio = document.getElementById("bio");
 
-let currentQuestion = 0;
-let score = 0;
-let lives = 3;
+const trees = document.querySelectorAll(".tree");
+const forest = document.getElementById("forest");
 
-const questionEl = document.getElementById("question");
-const answersEl = document.getElementById("answers");
-const scoreEl = document.getElementById("score");
-const livesEl = document.getElementById("lives");
+const ctx = document.getElementById("desmatamentoChart");
 
-function loadQuestion(){
-
-  if(currentQuestion >= questions.length){
-
-    questionEl.innerHTML = "🎉 Você concluiu o quiz!";
-    answersEl.innerHTML = "";
-
-    return;
-  }
-
-  const q = questions[currentQuestion];
-
-  questionEl.innerText = q.question;
-
-  answersEl.innerHTML = "";
-
-  q.answers.forEach((answer,index)=>{
-
-    const btn = document.createElement("button");
-
-    btn.innerText = answer;
-
-    btn.onclick = ()=>checkAnswer(index);
-
-    answersEl.appendChild(btn);
-
-  });
-}
-
-function checkAnswer(index){
-
-  if(index === questions[currentQuestion].correct){
-
-    score += 10;
-
-    scoreEl.innerText = score;
-
-  }else{
-
-    lives--;
-
-    livesEl.innerText = lives;
-
-    if(lives <= 0){
-
-      questionEl.innerHTML = "❌ Game Over";
-
-      answersEl.innerHTML = "";
-
-      return;
-    }
-  }
-
-  currentQuestion++;
-
-  loadQuestion();
-}
-
-loadQuestion();
-
-
-// SIMULADOR
-
-const trees = document.getElementById("trees");
-const treesResult = document.getElementById("treesResult");
-
-function updateSimulator(){
-
-  const value = trees.value;
-
-  treesResult.innerHTML =
-  `🌳 ${value} árvores absorvem aproximadamente <b>${value * 22}kg</b> de CO₂ por ano`;
-
-}
-
-trees.addEventListener("input",updateSimulator);
-
-updateSimulator();
-
-
-// METAS
-
-const checkboxes = document.querySelectorAll(".goals input");
-
-const progressBar = document.getElementById("progressBar");
-
-const progressText = document.getElementById("progressText");
-
-checkboxes.forEach(box=>{
-
-  box.addEventListener("change",updateProgress);
-
-});
-
-function updateProgress(){
-
-  let checked = document.querySelectorAll(".goals input:checked").length;
-
-  let total = checkboxes.length;
-
-  let percent = (checked / total) * 100;
-
-  progressBar.style.width = percent + "%";
-
-  progressText.innerText = `${percent}% concluído`;
-
-}
-
-
-// GAME
-
-const gameArea = document.getElementById("gameArea");
-
-const gameScoreEl = document.getElementById("gameScore");
-
-const timeEl = document.getElementById("time");
-
-const startGame = document.getElementById("startGame");
-
-let gameScore = 0;
-let timeLeft = 30;
-let gameInterval;
-let timer;
-
-const trashItems = ["🧴","📦","🥤","📰","🍾"];
-
-function createTrash(){
-
-  const trash = document.createElement("div");
-
-  trash.classList.add("trash");
-
-  trash.innerText =
-  trashItems[Math.floor(Math.random()*trashItems.length)];
-
-  trash.style.left = Math.random() * 90 + "%";
-
-  trash.style.top = Math.random() * 80 + "%";
-
-  trash.onclick = ()=>{
-
-    gameScore++;
-
-    gameScoreEl.innerText = gameScore;
-
-    trash.remove();
-
-  };
-
-  gameArea.appendChild(trash);
-
-  setTimeout(()=>{
-
-    trash.remove();
-
-  },2000);
-}
-
-function startEcoGame(){
-
-  gameScore = 0;
-
-  timeLeft = 30;
-
-  gameScoreEl.innerText = gameScore;
-
-  timeEl.innerText = timeLeft;
-
-  gameArea.innerHTML = "";
-
-  gameInterval = setInterval(createTrash,700);
-
-  timer = setInterval(()=>{
-
-    timeLeft--;
-
-    timeEl.innerText = timeLeft;
-
-    if(timeLeft <= 0){
-
-      clearInterval(gameInterval);
-
-      clearInterval(timer);
-
-      alert("🌍 Fim de jogo! Sua pontuação: " + gameScore);
-
-    }
-
-  },1000);
-}
-
-startGame.addEventListener("click",startEcoGame);
-
-
-// GRÁFICO
-
-const ctx = document.getElementById("ecoChart");
-
-new Chart(ctx, {
-  type: 'doughnut',
+let chart = new Chart(ctx, {
+  type: "line",
   data: {
-    labels: ['Reciclagem','Energia Solar','Plantio'],
+    labels: [],
     datasets: [{
-      data: [35,25,40]
+      label: "Área Florestal (%)",
+      data: [],
+      borderWidth: 3,
+      tension: 0.4
     }]
   },
   options: {
-    responsive:true
+    responsive: true,
+    plugins: {
+      legend: {
+        labels: {
+          font: {
+            size: 16
+          }
+        }
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        max: 100
+      }
+    }
   }
 });
+
+function updateSimulation(year) {
+
+  yearValue.textContent = year;
+
+  const progress = year - 2020;
+
+  const forestPercent = Math.max(100 - progress * 1.2, 5);
+
+  const deadTrees = Math.floor((100 - forestPercent) / 8);
+
+  trees.forEach((tree, index) => {
+
+    if(index < deadTrees){
+      tree.classList.add("dead");
+      tree.textContent = "🪵";
+    } else {
+      tree.classList.remove("dead");
+      tree.textContent = "🌳";
+    }
+
+  });
+
+  co2.textContent = `${350 + progress * 3} ppm`;
+
+  temp.textContent = `${(1 + progress * 0.03).toFixed(1)}°C`;
+
+  bio.textContent = `${Math.max(100 - progress * 1.1, 10).toFixed(0)}%`;
+
+  forest.style.background =
+    forestPercent < 50
+      ? "linear-gradient(to top, #8b5a2b, #c68642)"
+      : "linear-gradient(to top, #3b7d2b, #6dbb5d)";
+
+  updateChart(year, forestPercent);
+
+}
+
+function updateChart(year, value) {
+
+  if (!chart.data.labels.includes(year)) {
+
+    chart.data.labels.push(year);
+
+    chart.data.datasets[0].data.push(value);
+
+    chart.update();
+
+  }
+
+}
+
+slider.addEventListener("input", () => {
+
+  chart.data.labels = [];
+  chart.data.datasets[0].data = [];
+
+  for(let y = 2020; y <= slider.value; y += 10){
+
+    const progress = y - 2020;
+
+    const forestPercent = Math.max(100 - progress * 1.2, 5);
+
+    chart.data.labels.push(y);
+
+    chart.data.datasets[0].data.push(forestPercent);
+
+  }
+
+  chart.update();
+
+  updateSimulation(parseInt(slider.value));
+
+});
+
+updateSimulation(2020);
