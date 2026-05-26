@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>EcoFuture</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simulador de Desmatamento</title>
 
   <link rel="stylesheet" href="style.css">
 
@@ -12,115 +11,81 @@
 </head>
 <body>
 
-<header>
-  <h1>🌍 EcoFuture</h1>
-  <p>Seu impacto pode mudar o planeta</p>
-</header>
+  <header>
+    <h1>🌳 Simulador de Desmatamento</h1>
+    <p>Veja como o desmatamento afeta o planeta ao longo do tempo.</p>
+  </header>
 
-<div class="container">
+  <main>
 
-  <!-- QUIZ -->
-  <section class="card">
-    <h2>♻ Quiz Ambiental</h2>
+    <section class="controls">
+      <h2>Selecione o Ano</h2>
 
-    <div id="quiz">
-      <h3 id="question"></h3>
+      <input
+        type="range"
+        min="2020"
+        max="2100"
+        value="2020"
+        id="yearSlider"
+      >
 
-      <div id="answers"></div>
-
-      <div class="quiz-info">
-        <p>⭐ Pontos: <span id="score">0</span></p>
-        <p>❤️ Vidas: <span id="lives">3</span></p>
+      <div class="year-box">
+        Ano: <span id="yearValue">2020</span>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SIMULADOR -->
-  <section class="card">
-    <h2>🌱 Simulador Ambiental</h2>
+    <section class="simulation">
 
-    <label>Quantidade de árvores plantadas</label>
+      <div class="forest-container" id="forest">
 
-    <input type="range" min="0" max="500" value="50" id="trees">
+        <!-- árvores -->
+        <div class="tree">🌳</div>
+        <div class="tree">🌳</div>
+        <div class="tree">🌳</div>
+        <div class="tree">🌳</div>
+        <div class="tree">🌳</div>
+        <div class="tree">🌳</div>
+        <div class="tree">🌳</div>
+        <div class="tree">🌳</div>
+        <div class="tree">🌳</div>
+        <div class="tree">🌳</div>
+        <div class="tree">🌳</div>
+        <div class="tree">🌳</div>
 
-    <div class="simulator-box">
-      <h3 id="treesResult"></h3>
-    </div>
-  </section>
+      </div>
 
-  <!-- GAME -->
-  <section class="card">
-    <h2>🎮 Eco Game</h2>
+    </section>
 
-    <p>Clique nos lixos recicláveis antes do tempo acabar!</p>
+    <section class="stats">
 
-    <div class="game-info">
-      <p>⏱ Tempo: <span id="time">30</span>s</p>
-      <p>🏆 Pontos: <span id="gameScore">0</span></p>
-    </div>
+      <div class="card">
+        <h3>🌎 CO₂ na Atmosfera</h3>
+        <p id="co2">350 ppm</p>
+      </div>
 
-    <button id="startGame">Começar</button>
+      <div class="card">
+        <h3>🌡 Temperatura Média</h3>
+        <p id="temp">1.0°C</p>
+      </div>
 
-    <div id="gameArea"></div>
-  </section>
+      <div class="card">
+        <h3>🐾 Biodiversidade</h3>
+        <p id="bio">100%</p>
+      </div>
 
-  <!-- METAS -->
-  <section class="card">
-    <h2>🎯 Metas Sustentáveis</h2>
+    </section>
 
-    <div class="goals">
+    <section class="chart-section">
+      <canvas id="desmatamentoChart"></canvas>
+    </section>
 
-      <label>
-        <input type="checkbox">
-        Economizar água
-      </label>
+  </main>
 
-      <label>
-        <input type="checkbox">
-        Reciclar lixo
-      </label>
+  <footer>
+    <p>Projeto educativo sobre impactos ambientais 🌱</p>
+  </footer>
 
-      <label>
-        <input type="checkbox">
-        Usar bicicleta
-      </label>
-
-      <label>
-        <input type="checkbox">
-        Plantar árvores
-      </label>
-
-    </div>
-
-    <div class="progress-container">
-      <div id="progressBar"></div>
-    </div>
-
-    <p id="progressText">0% concluído</p>
-
-  </section>
-
-  <!-- RANKING -->
-  <section class="card">
-    <h2>🏆 Ranking</h2>
-
-    <ol id="ranking">
-      <li>🥇 Ana - 320 pts</li>
-      <li>🥈 Lucas - 250 pts</li>
-      <li>🥉 Maria - 200 pts</li>
-    </ol>
-  </section>
-
-  <!-- GRÁFICOS -->
-  <section class="card">
-    <h2>📊 Impacto Ambiental</h2>
-
-    <canvas id="ecoChart"></canvas>
-  </section>
-
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
 </html>
