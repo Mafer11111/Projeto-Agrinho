@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>EcoFuture</title>
 
   <link rel="stylesheet" href="style.css">
@@ -13,77 +14,111 @@
 
 <header>
   <h1>🌍 EcoFuture</h1>
-  <p>Construindo um planeta melhor</p>
+  <p>Seu impacto pode mudar o planeta</p>
 </header>
 
-<section class="card">
-  <h2>♻ Quiz Ambiental</h2>
+<div class="container">
 
-  <div id="quiz">
-    <h3 id="question"></h3>
+  <!-- QUIZ -->
+  <section class="card">
+    <h2>♻ Quiz Ambiental</h2>
 
-    <div id="answers"></div>
+    <div id="quiz">
+      <h3 id="question"></h3>
 
-    <p>Pontos: <span id="score">0</span></p>
-  </div>
-</section>
+      <div id="answers"></div>
 
-<section class="card">
-  <h2>🌱 Simulador Ambiental</h2>
+      <div class="quiz-info">
+        <p>⭐ Pontos: <span id="score">0</span></p>
+        <p>❤️ Vidas: <span id="lives">3</span></p>
+      </div>
+    </div>
+  </section>
 
-  <label>Quantidade de árvores plantadas:</label>
+  <!-- SIMULADOR -->
+  <section class="card">
+    <h2>🌱 Simulador Ambiental</h2>
 
-  <input type="range" min="0" max="100" value="10" id="trees">
+    <label>Quantidade de árvores plantadas</label>
 
-  <p id="treesResult"></p>
-</section>
+    <input type="range" min="0" max="500" value="50" id="trees">
 
-<section class="card">
-  <h2>🏆 Ranking Sustentável</h2>
+    <div class="simulator-box">
+      <h3 id="treesResult"></h3>
+    </div>
+  </section>
 
-  <ol id="ranking">
-    <li>Ana - 120 pts</li>
-    <li>Lucas - 100 pts</li>
-    <li>Maria - 80 pts</li>
-  </ol>
-</section>
+  <!-- GAME -->
+  <section class="card">
+    <h2>🎮 Eco Game</h2>
 
-<section class="card">
-  <h2>🎯 Metas Sustentáveis</h2>
+    <p>Clique nos lixos recicláveis antes do tempo acabar!</p>
 
-  <div class="goals">
-    <label>
-      <input type="checkbox">
-      Economizar água
-    </label>
+    <div class="game-info">
+      <p>⏱ Tempo: <span id="time">30</span>s</p>
+      <p>🏆 Pontos: <span id="gameScore">0</span></p>
+    </div>
 
-    <label>
-      <input type="checkbox">
-      Reciclar lixo
-    </label>
+    <button id="startGame">Começar</button>
 
-    <label>
-      <input type="checkbox">
-      Plantar árvores
-    </label>
-  </div>
-</section>
+    <div id="gameArea"></div>
+  </section>
 
-<section class="card">
-  <h2>🎮 Mini Game</h2>
+  <!-- METAS -->
+  <section class="card">
+    <h2>🎯 Metas Sustentáveis</h2>
 
-  <p>Clique nas folhas para ganhar pontos!</p>
+    <div class="goals">
 
-  <button id="gameBtn">🍃</button>
+      <label>
+        <input type="checkbox">
+        Economizar água
+      </label>
 
-  <p>Pontos do jogo: <span id="gameScore">0</span></p>
-</section>
+      <label>
+        <input type="checkbox">
+        Reciclar lixo
+      </label>
 
-<section class="card">
-  <h2>📊 Impacto Ambiental</h2>
+      <label>
+        <input type="checkbox">
+        Usar bicicleta
+      </label>
 
-  <canvas id="ecoChart"></canvas>
-</section>
+      <label>
+        <input type="checkbox">
+        Plantar árvores
+      </label>
+
+    </div>
+
+    <div class="progress-container">
+      <div id="progressBar"></div>
+    </div>
+
+    <p id="progressText">0% concluído</p>
+
+  </section>
+
+  <!-- RANKING -->
+  <section class="card">
+    <h2>🏆 Ranking</h2>
+
+    <ol id="ranking">
+      <li>🥇 Ana - 320 pts</li>
+      <li>🥈 Lucas - 250 pts</li>
+      <li>🥉 Maria - 200 pts</li>
+    </ol>
+  </section>
+
+  <!-- GRÁFICOS -->
+  <section class="card">
+    <h2>📊 Impacto Ambiental</h2>
+
+    <canvas id="ecoChart"></canvas>
+  </section>
+
+</div>
 
 <script src="script.js"></script>
 
