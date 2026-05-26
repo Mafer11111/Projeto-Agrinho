@@ -3,14 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EcoHero</title>
+  <title>EcoFuture</title>
 
   <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
-  <canvas id="game" width="1000" height="600"></canvas>
+<header>
+  <h1>🌍 EcoFuture</h1>
+  <p>Construindo um planeta melhor</p>
+</header>
 
-  <script src="script.js"></script>
+<section class="card">
+  <h2>♻ Quiz Ambiental</h2>
+
+  <div id="quiz">
+    <h3 id="question"></h3>
+
+    <div id="answers"></div>
+
+    <p>Pontos: <span id="score">0</span></p>
+  </div>
+</section>
+
+<section class="card">
+  <h2>🌱 Simulador Ambiental</h2>
+
+  <label>Quantidade de árvores plantadas:</label>
+
+  <input type="range" min="0" max="100" value="10" id="trees">
+
+  <p id="treesResult"></p>
+</section>
+
+<section class="card">
+  <h2>🏆 Ranking Sustentável</h2>
+
+  <ol id="ranking">
+    <li>Ana - 120 pts</li>
+    <li>Lucas - 100 pts</li>
+    <li>Maria - 80 pts</li>
+  </ol>
+</section>
+
+<section class="card">
+  <h2>🎯 Metas Sustentáveis</h2>
+
+  <div class="goals">
+    <label>
+      <input type="checkbox">
+      Economizar água
+    </label>
+
+    <label>
+      <input type="checkbox">
+      Reciclar lixo
+    </label>
+
+    <label>
+      <input type="checkbox">
+      Plantar árvores
+    </label>
+  </div>
+</section>
+
+<section class="card">
+  <h2>🎮 Mini Game</h2>
+
+  <p>Clique nas folhas para ganhar pontos!</p>
+
+  <button id="gameBtn">🍃</button>
+
+  <p>Pontos do jogo: <span id="gameScore">0</span></p>
+</section>
+
+<section class="card">
+  <h2>📊 Impacto Ambiental</h2>
+
+  <canvas id="ecoChart"></canvas>
+</section>
+
+<script src="script.js"></script>
+
 </body>
 </html>

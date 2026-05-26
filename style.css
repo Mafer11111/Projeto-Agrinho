@@ -1,18 +1,82 @@
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
 }
 
 body{
-    background:#1e1e1e;
-    overflow:hidden;
+  background:#e8f5e9;
+  color:#1b5e20;
+}
+
+header{
+  background:#2e7d32;
+  color:white;
+  text-align:center;
+  padding:30px;
+}
+
+.card{
+  background:white;
+  margin:20px;
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+h2{
+  margin-bottom:15px;
+}
+
+#answers button{
+  display:block;
+  margin:10px 0;
+  width:100%;
+  padding:10px;
+  border:none;
+  border-radius:10px;
+  background:#66bb6a;
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+#answers button:hover{
+  background:#388e3c;
+}
+
+input[type="range"]{
+  width:100%;
+  margin-top:15px;
+}
+
+.goals{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+#gameBtn{
+  font-size:40px;
+  padding:20px;
+  border:none;
+  border-radius:50%;
+  cursor:pointer;
+  background:#81c784;
+  transition:0.2s;
+}
+
+#gameBtn:hover{
+  transform:scale(1.1);
 }
 
 canvas{
-    display:block;
-    margin:auto;
-    background:#87CEEB;
-    border:4px solid #222;
+  margin-top:20px;
+}
+
+@media(max-width:768px){
+  .card{
+    margin:10px;
+  }
 }
