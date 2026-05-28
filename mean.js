@@ -1,60 +1,123 @@
-const slider = document.getElementById("yearSlider")
-const yearText = document.getElementById("year")
-const forestPercent = document.getElementById("forestPercent")
-const temperature = document.getElementById("temperature")
-const biodiversity = document.getElementById("biodiversity")
-const co2 = document.getElementById("co2")
-const forest = document.getElementById("forest")
-const pollution = document.getElementById("pollution")
-const animals = document.getElementById("animals")
-const message = document.getElementById("message")
-const playBtn = document.getElementById("playBtn")
-const restoreBtn = document.getElementById("restoreBtn")
-const sun = document.getElementById("sun")
+const publishBtn = document.getElementById('publishBtn');
+const postInput = document.getElementById('postInput');
+const feed = document.getElementById('feed');
 
-for(let i = 0; i < 45; i++){
+publishBtn.addEventListener('click', () => {
 
-  const tree = document.createElement("div")
-  tree.classList.add("tree")
-  tree.innerHTML = "🌳"
-  forest.appendChild(tree)
+  const text = postInput.value.trim();
+
+  if(text === ''){
+    alert('Digite algo para publicar!');
+    return;
+  }
+
+  const post = document.createElement('article');
+
+  post.classList.add('post');
+
+  post.innerHTML = `
+
+    <div class="post-header">
+
+      <img src="https://i.pravatar.cc/100?img=${Math.floor(Math.random()*70)}">
+
+      <div>
+        <h4>Usuário Verde</h4>
+        <span>Agora mesmo</span>
+      </div>
+
+    </div>
+
+    <p>${text}</p>
+
+    <img
+      class="post-image"
+      src="https://source.unsplash.com/1200x700/?nature,forest,eco"
+      alt=""
+    >
+
+    <div class="post-actions">
+
+      <button class="like-btn">
+        ❤️ <span>0</span>
+      </button>
+
+      <button class="comment-btn">
+        💬 Comentários
+      </button>
+
+    </div>
+
+    <div class="comments">
+
+      <input
+        type="text"
+        placeholder="Escreva um comentário..."
+      >
+
+      <button>
+        Enviar
+      </button>
+
+      <div class="comment-list"></div>
+
+    </div>
+
+  `;
+
+  feed.prepend(post);
+
+  postInput.value = '';
+
+  activatePost(post);
+
+});
+
+function activatePost(post){
+
+  const likeBtn = post.querySelector('.like-btn');
+  const likeNumber = likeBtn.querySelector('span');
+
+  let likes = parseInt(likeNumber.innerText);
+
+  likeBtn.addEventListener('click', () => {
+
+    likes++;
+
+    likeNumber.innerText = likes;
+
+    likeBtn.style.transform = 'scale(1.1)';
+
+    setTimeout(() => {
+      likeBtn.style.transform = 'scale(1)';
+    }, 200);
+
+  });
+
+  const commentInput = post.querySelector('.comments input');
+  const commentBtn = post.querySelector('.comments button');
+  const commentList = post.querySelector('.comment-list');
+
+  commentBtn.addEventListener('click', () => {
+
+    const text = commentInput.value.trim();
+
+    if(text === '') return;
+
+    const comment = document.createElement('div');
+
+    comment.classList.add('comment-item');
+
+    comment.innerText = text;
+
+    commentList.appendChild(comment);
+
+    commentInput.value = '';
+
+  });
 
 }
 
-const trees = document.querySelectorAll(".tree")
+const posts = document.querySelectorAll('.post');
 
-const ctx = document.getElementById("chart")
-
-const chart = new Chart(ctx, {
-  type:"line",
-  data:{
-    labels:[2020],
-    datasets:[{
-      label:"Área Florestal",
-      data:[100],
-      borderWidth:4,
-      tension:0.4,
-      fill:true
-    }]
-  },
-  options:{
-    responsive:true,
-    plugins:{
-      legend:{
-        labels:{
-          color:"black",
-          font:{ size:16 }
-        }
-      }
-    },
-    scales:{
-      y:{
-        min:0,
-        max:100
-      }
-    }
-  }
-})
-
-function updateWorld(year){
-  cha
+posts.forEach(post => activatePost(post));

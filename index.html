@@ -4,14 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rede Social Verde</title>
+
   <link rel="stylesheet" href="style.css">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
   <aside class="sidebar">
+
     <div class="logo">
       🌱 GreenConnect
     </div>
@@ -25,13 +30,93 @@
 
     <div class="eco-card">
       <h3>Desafio do Dia</h3>
-      <p>Fique 1 dia sem plástico descartável.</p>
+
+      <p>
+        Fique 1 dia sem plástico descartável.
+      </p>
+
       <button>Participar</button>
     </div>
+
   </aside>
 
   <main>
 
     <section class="create-post">
-      <textarea id="postInput" placeholder="Compartilhe uma ação sustentável..."></textarea>
+
+      <textarea
+        id="postInput"
+        placeholder="Compartilhe uma ação sustentável..."
+      ></textarea>
+
+      <button id="publishBtn">
+        Publicar
+      </button>
+
+    </section>
+
+    <section id="feed" class="feed">
+
+      <article class="post">
+
+        <div class="post-header">
+
+          <img
+            src="https://i.pravatar.cc/100?img=5"
+            alt=""
+          >
+
+          <div>
+            <h4>Maria Verde</h4>
+            <span>Há 2 horas</span>
+          </div>
+
+        </div>
+
+        <p>
+          Hoje plantei 3 árvores no meu bairro 🌳💚
+        </p>
+
+        <img
+          class="post-image"
+          src="https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=1200&auto=format&fit=crop"
+          alt=""
+        >
+
+        <div class="post-actions">
+
+          <button class="like-btn">
+            ❤️ <span>12</span>
+          </button>
+
+          <button class="comment-btn">
+            💬 Comentários
+          </button>
+
+        </div>
+
+        <div class="comments">
+
+          <input
+            type="text"
+            placeholder="Escreva um comentário..."
+          >
+
+          <button>
+            Enviar
+          </button>
+
+          <div class="comment-list"></div>
+
+        </div>
+
+      </article>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
 </html>
