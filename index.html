@@ -1,116 +1,37 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eco Collapse Simulator</title>
-
+  <title>Rede Social Verde</title>
   <link rel="stylesheet" href="style.css">
-
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-   <div class="particles"></div>
 
-  <header>
-    <h1>🌳 ECO COLLAPSE SIMULATOR</h1>
-    <p>Veja o impacto do desmatamento no planeta em tempo real.</p>
-  </header>
+  <aside class="sidebar">
+    <div class="logo">
+      🌱 GreenConnect
+    </div>
+
+    <nav>
+      <button class="nav-btn active">🏠 Início</button>
+      <button class="nav-btn">🌎 Explorar</button>
+      <button class="nav-btn">🏆 Desafios</button>
+      <button class="nav-btn">👤 Perfil</button>
+    </nav>
+
+    <div class="eco-card">
+      <h3>Desafio do Dia</h3>
+      <p>Fique 1 dia sem plástico descartável.</p>
+      <button>Participar</button>
+    </div>
+  </aside>
 
   <main>
 
-    <section class="top-panel">
-
-      <div class="control-box glass">
-
-        <h2>📅 Linha do Tempo</h2>
-
-        <input type="range" id="yearSlider" min="2020" max="2100" value="2020">
-
-        <div class="year-display">
-          <span id="year">2020</span>
-        </div>
-        <button id="playBtn">▶ Simular Futuro</button>
-        <button id="restoreBtn">🌱 Restaurar Floresta</button>
-
-      </div>
-
-      <div class="status-panel glass">
-
-        <div class="status-card">
-          <h3>🌳 Floresta</h3>
-          <p id="forestPercent">100%</p>
-        </div>
-
-        <div class="status-card">
-          <h3>🌡 Temperatura</h3>
-          <p id="temperature">1.0°C</p>
-        </div>
-
-        <div class="status-card">
-          <h3>🐾 Biodiversidade</h3>
-          <p id="biodiversity">100%</p>
-        </div>
-
-        <div class="status-card">
-          <h3>💨 CO₂</h3>
-          <p id="co2">350 ppm</p>
-        </div>
-
-      </div>
-
-    </section>
-
-    <section class="world glass">
-      <div class="sky"></div>
-      <div class="sun" id="sun"></div>
-      <div class="cloud cloud1"></div>
-      <div class="cloud cloud2"></div>
-
-      <div class="pollution" id="pollution"></div>
-
-      <div class="forest" id="forest">
-      </div>
-
-      <div class="animals" id="animals">
-        🦜 🐆 🐒 🦋
-      </div>
-
-      <div class="message" id="message">
-        Floresta saudável 🌱
-      </div>
-      </section>
-
-    <section class="chart-area glass">
-      <canvas id="chart"></canvas>
-    </section>
-
-    <section class="info-grid">
-
-      <div class="info-card glass">
-        <h3>🌎 Impacto Ambiental</h3>
-        <p>
-          O desmatamento reduz a biodiversidade, aumenta o CO₂ e acelera o aquecimento global.
-        </p>
-      </div>
-      <div class="info-card glass">
-        <h3>⚠ Consequências</h3>
-        <p>
-          Menos árvores significa menos chuva, mais calor e risco climático extremo.
-        </p>
-      </div>
-
-      <div class="info-card glass">
-        <h3>🌱 Soluções</h3>
-        <p>
-          Reflorestamento, preservação e sustentabilidade podem mudar o futuro.
-        </p>
-      </div>
-
-    </section>
-
-  </main>
-
-  <script src="script.js"></script>
-</body>
+    <section class="create-post">
+      <textarea id="postInput" placeholder="Compartilhe uma ação sustentável..."></textarea>
 </html>
