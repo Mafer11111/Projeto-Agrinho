@@ -19,6 +19,7 @@ Por meio de uma interface interativa e de fácil navegação, o site apresenta c
 *Contribuir para a educação ambiental por meio da tecnologia.
 
 🌾 Relação com o Tema Agrinho 2026
+
 O projeto está alinhado ao tema:
 
 "Agro forte, futuro sustentável: Equilíbrio entre produção e meio ambiente"
@@ -26,6 +27,7 @@ O projeto está alinhado ao tema:
 O conteúdo destaca práticas que permitem aumentar a produtividade agrícola ao mesmo tempo em que preservam os recursos naturais, promovendo um desenvolvimento sustentável para o campo e para a sociedade.
 
 ✨ Conteúdos Apresentados
+
 🌳 Agricultura Sustentável
 Explicação sobre os princípios da agricultura sustentável e sua importância para o futuro.
 
