@@ -5,6 +5,7 @@
 Projeto Agrinho 2026
 
 📖 Sobre o Projeto
+
 O projeto Agro Sustentável foi desenvolvido para o Concurso Agrinho 2026 com o objetivo de apresentar informações sobre a agricultura sustentável e demonstrar como a produção agropecuária pode crescer de forma responsável, preservando os recursos naturais para as futuras gerações.
 
 Por meio de uma interface interativa e de fácil navegação, o site apresenta conceitos, práticas sustentáveis, dados relevantes do agronegócio brasileiro e informações baseadas em fontes confiáveis.
