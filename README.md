@@ -74,6 +74,20 @@ Plano Safra
 
 Documentos e publicações oficiais sobre sustentabilidade no agronegócio
 
+📚 Créditos e Referências
+
+As informações utilizadas neste projeto foram pesquisadas em fontes confiáveis relacionadas à agricultura sustentável e ao agronegócio brasileiro, incluindo materiais da Embrapa, Ministério da Agricultura e publicações educacionais.
+
+Imagens
+
+As imagens utilizadas neste projeto foram geradas com auxílio de ferramentas de Inteligência Artificial para fins educacionais e ilustrativos.
+
+Ferramenta utilizada:
+
+**escrever aqui**– geração de imagens por IA.
+
+As imagens foram utilizadas apenas para complementar a apresentação visual do conteúdo e não substituem informações técnicas ou científicas.
+
 👩‍💻 Autoria
 Projeto desenvolvido para participação no Concurso Agrinho 2026 – Categoria Programação.
 
