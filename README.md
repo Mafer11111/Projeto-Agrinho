@@ -11,6 +11,7 @@ O projeto Agro Sustentável foi desenvolvido para o Concurso Agrinho 2026 com o 
 Por meio de uma interface interativa e de fácil navegação, o site apresenta conceitos, práticas sustentáveis, dados relevantes do agronegócio brasileiro e informações baseadas em fontes confiáveis.
 
 🎯 Objetivos
+
 *Promover a conscientização sobre a importância da sustentabilidade no agronegócio.
 *Demonstrar que é possível conciliar produção agrícola e preservação ambiental.
 *Divulgar práticas sustentáveis utilizadas no campo.
