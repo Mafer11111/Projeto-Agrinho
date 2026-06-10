@@ -13,10 +13,15 @@ Por meio de uma interface interativa e de fácil navegação, o site apresenta c
 🎯 Objetivos
 
 *Promover a conscientização sobre a importância da sustentabilidade no agronegócio.
+
 *Demonstrar que é possível conciliar produção agrícola e preservação ambiental.
+
 *Divulgar práticas sustentáveis utilizadas no campo.
+
 *Incentivar o uso de tecnologias que reduzam impactos ambientais.
+
 *Apresentar dados e informações que valorizem a produção responsável.
+
 *Contribuir para a educação ambiental por meio da tecnologia.
 
 🌾 Relação com o Tema Agrinho 2026
