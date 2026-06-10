@@ -80,4 +80,5 @@ Projeto desenvolvido para participação no Concurso Agrinho 2026 – Categoria 
 Autora: Maria Fernanda Silva de Oliveira.
 
 🌍 Mensagem Final
+
 Fortalecer o agro e preservar o meio ambiente são objetivos que podem caminhar juntos. A adoção de práticas sustentáveis contribui para uma produção mais eficiente, responsável e preparada para os desafios do futuro.
