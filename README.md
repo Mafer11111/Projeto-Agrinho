@@ -84,7 +84,7 @@ As imagens utilizadas neste projeto foram geradas com auxílio de ferramentas de
 
 Ferramenta utilizada:
 
-**escrever aqui**– geração de imagens por IA.
+A IA utilizada para as imagens foi a V0. O prompt usado foi "Preciso de imagens já existentes para um site com o tema 'Agro forte, futuro sustentável: equílibrio entre produção e meio ambiente' "
 
 As imagens foram utilizadas apenas para complementar a apresentação visual do conteúdo e não substituem informações técnicas ou científicas.
 
